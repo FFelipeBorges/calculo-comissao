@@ -4,28 +4,28 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             primaryKey: true,
         },
-        nome_cliente: {
+        customer_name: {
             type: DataTypes.STRING,
         },
-        data_emissao: {
+        issuance_date: {
             type: DataTypes.DATE,
         },
-        data_faturamento: {
+        invoicing_date: {
             type: DataTypes.DATE,
         },
-        valor_pedido: {
+        order_value: {
             type: DataTypes.STRING,
         },
-        porcentagem_comissao: {
+        percentage_commission: {
             type: DataTypes.STRING,
         }
     }
 
     const tableConfiguration = {
-        tableName: 'pedidos',
+        tableName: 'order_1',
         timestamps: false,
     }
     
-    const PedidosModel = sequelize.define('pedidos', tableDefinitions, tableConfiguration);
-    return pedidos
+    const PedidosModel = sequelize.define('order_1', tableDefinitions, tableConfiguration);
+    return order_1
 }
