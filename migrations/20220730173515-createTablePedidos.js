@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    return queryInterface.sequelize.query(`
+    async up (queryInterface, Sequelize) {
+        return queryInterface.sequelize.query(`
       CREATE TABLE pedidos(
         id varchar(36) NOT NULL,
         numero_pedido varchar(20) NOT NULL,
@@ -14,11 +14,11 @@ module.exports = {
         PRIMARY KEY(id)
       );
     `);
-  },
+    },
 
-  async down (queryInterface, Sequelize) {
-   return queryInterface.sequelize.query(`
+    async down (queryInterface, Sequelize) {
+        return queryInterface.sequelize.query(`
     DROP TABLE pedidos
-   `)
-  }
+   `);
+    }
 };
