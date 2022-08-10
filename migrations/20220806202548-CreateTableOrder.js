@@ -1,24 +1,24 @@
 `use strict`;
 
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     return queryInterface.sequelize.query(`
-      CREATE TABLE order_1 (
+      CREATE TABLE transactions (
         id varchar(36) NOT NULL,
         number int NOT NULL,
         customer_name varchar(200) NOT NULL,
-        issuance_date date,
+        issue_date date,
         invoicing_date date ,
-        order_value float NOT NULL,
+        value float NOT NULL,
         percentage_commission int NOT NULL,
         PRIMARY KEY(id)
       );
     `);
   },
 
-  async down (queryInterface, Sequelize) {
-   return queryInterface.sequelize.query(`
-    DROP TABLE order_1
+  async down(queryInterface, Sequelize) {
+    return queryInterface.sequelize.query(`
+    DROP TABLE transactions
    `)
   }
 };
