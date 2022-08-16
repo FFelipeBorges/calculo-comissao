@@ -1,11 +1,11 @@
 const express = require('express');
 
-const { routerWithAuth, routerWithoutAuth } = require('./routes');
+const indexRouter = require('./routes/index');
 
 const app = express();
 
 app.use(express.json());
-app.use(routerWithoutAuth, routerWithAuth);
+app.use('/', indexRouter);
 
 app.listen(3333, () => console.log('ok'));
 
