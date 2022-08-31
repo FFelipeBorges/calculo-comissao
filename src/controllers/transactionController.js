@@ -15,7 +15,7 @@ const transactionsController = {
     update: async (request, response) => {
         await Order.update(request.body, {
             where: {
-                id: request.session.id
+                id: request.params.id
             }
         });
         response.redict('/telaPedidos');
